@@ -1,5 +1,5 @@
 #!/bin/bash
-python -m py_compile "$PYFILE"
-
-dir=$(dirname "$PYFILE")
-cp "$PYFILE" "$dir/${PYFILE}c"
+python3 -m py_compile "$PYFILE"
+PYFILEC=$PYFILE'c'
+mv __pycache__/*.pyc ./$PYFILEC && chmod u+x $PYFILEC
+rmdir __pycache__
