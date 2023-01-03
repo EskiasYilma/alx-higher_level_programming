@@ -6,3 +6,6 @@ def uppercase(str):
                   end="\n" if i == len(str) - 1 else '')
         else:
             print('{:c}'.format(ord(j)), end="\n" if i == len(str) - 1 else '')
+
+
+uppercase("")
