@@ -13,4 +13,3 @@ def fizzbuzz():
         else:
             print(i, end="\n" if i >= 100 else ' ')
             continue
-
