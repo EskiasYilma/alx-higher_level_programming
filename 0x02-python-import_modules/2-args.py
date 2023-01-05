@@ -2,7 +2,7 @@
 def my_func(argv):
     if argv:
         if (len(argv) == 1):
-            print("{} arguements".format(len(argv) - 1))
+            print("{} arguements.".format(len(argv) - 1))
         elif (len(argv) == 2):
             print("{} arguement:".format(len(argv) - 1))
             print("{}: {}".format(len(argv) - 1, argv[1]))
