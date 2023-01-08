@@ -8,36 +8,37 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *current;
-	listint_t *reversed;
-	listint_t *next;
-
-	current = *head;
-	reversed = NULL;
+	listint_t *current = *head;
+	int *temp, *values = NULL;
+	int num_values = 0, i = 0;
 
 	if (*head == NULL)
-	{
 		return (1);
-	}
-
+	values = malloc(sizeof(int));
+	if (values == NULL)
+		return (0);
 	while (current != NULL)
 	{
-		next = current->next;
-		current->next = reversed;
-		reversed = current;
-		current = next;
-	}
-
-	current = *head;
-	while (current != NULL)
-	{
-		if (current->n != reversed->n)
+		values[num_values] = current->n;
+		num_values++;
+		temp = realloc(values, (num_values + 1) * sizeof(int));
+		if (temp == NULL)
 		{
+			free(values);
 			return (0);
 		}
+		values = temp;
 		current = current->next;
-		reversed = reversed->next;
 	}
 
+	for (i = 0; i < num_values / 2; i++)
+	{
+		if (values[i] != values[num_values - i - 1])
+		{
+			free(values);
+			return (0);
+		}
+	}
+	free(values);
 	return (1);
 }
