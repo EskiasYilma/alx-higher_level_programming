@@ -9,7 +9,7 @@
 
 void print_python_list_info(PyObject *p)
 {
-	int size = PyList_Size(p);
+	int size = PyList_Size(p), i = 0;
 	Py_ssize_t allocated = ((PyListObject *)p)->allocated;
 
 	if (!PyList_Check(p))
@@ -18,7 +18,7 @@ void print_python_list_info(PyObject *p)
 	}
 	printf("[*] Size of the Python List = %d\n", size);
 	printf("[*] Allocated = %ld\n", allocated);
-	for (int i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		PyObject *element = PyList_GetItem(p, i);
 
