@@ -1,51 +1,31 @@
-#include <Python.h>
+#include "Python.h"
 
 /**
- * print_python_list_info - prints some basic info about Python lists.
- * @p: PyObject pointer
- * Return: Nothing
- */
+  * print_python_list_info - Prints information about python objects
+  * @p: Pointer to the Python list object
+  * Return: Nothing
+  */
 
 void print_python_list_info(PyObject *p)
 {
-	int size = PyList_Size(p), i = 0;
-	Py_ssize_t allocated = ((PyListObject *)p)->allocated;
-	PyObject *element;
+	Py_ssize_t i;
+	Py_ssize_t list_size;
+	Py_ssize_t allocated;
+	PyObject *item;
+	const char *item_type;
+	PyListObject *list_object;
 
-	if (!PyList_Check(p))
+	list_object = (PyListObject *)p;
+	list_size = PyList_Size(p);
+	allocated = list_object->allocated;
+
+	printf("[*] Size of the Python List: %zd\n", list_size);
+	printf("[*] Allocated: %zd\n", allocated);
+
+	for (i = 0; i < list_size; i++)
 	{
-		printf("Input is not a Python list\n"), return;
-	}
-	printf("[*] Size of the Python List = %d\n", size);
-	printf("[*] Allocated = %ld\n", allocated);
-	for (i = 0; i < size; i++)
-	{
-		element = PyList_GetItem(p, i);
-		printf("Element %d: ", i);
-		if (PyLong_Check(element))
-		{
-			printf("int");
-		}
-		else if (PyFloat_Check(element))
-		{
-			printf("float");
-		}
-		else if (PyTuple_Check(element))
-		{
-			printf("tuple");
-		}
-		else if (PyList_Check(element))
-		{
-			printf("list");
-		}
-		else if (PyStr_Check(element))
-		{
-			printf("str");
-		}
-		else
-		{
-			PyObject_Print(element, stdout, 0);
-		}
-		printf("\n");
+		item = PyList_GetItem(p, i);
+		item_type = Py_TYPE(item)->tp_name;
+		printf("Element %zd: %s\n", i, item_type);
 	}
 }
