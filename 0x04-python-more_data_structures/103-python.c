@@ -1,10 +1,10 @@
 #include "Python.h"
 /**
-  * print_python_list_info - Prints information about python objects
+  * print_python_list - Prints information about python objects
   * @p: PyObject pointer to print info about
   * Return: Nothing
   */
-void print_python_list_info(PyObject *p)
+void print_python_list(PyObject *p)
 {
 	Py_ssize_t i, size, allocated;
 	PyObject *item;
