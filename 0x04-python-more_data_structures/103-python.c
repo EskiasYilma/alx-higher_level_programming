@@ -1,4 +1,41 @@
 #include "Python.h"
+#include <stdio.h>
+#include <string.h>
+
+
+/**
+  * print_python_bytes - Prints information about python byte objects
+  * @p: PyObject pointer to print info about
+  * Return: Nothing
+  */
+void print_python_bytes(PyObject *p)
+{
+	char *data;
+	int i, len;
+
+	data = ((PyBytesObject *)p)->ob_sval;
+	len = ((PyVarObject *)p)->ob_size;
+
+	printf("[.] bytes object info\n");
+	if (!PyBytes_Check(p))
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
+	printf("  size: %d\n", (int)len);
+	printf("  trying string: %s\n", data);
+	if (len < 10)
+		printf("  first %d bytes:", len + 1);
+	else
+		printf("  first 10 bytes:");
+
+	for (i = 0; i < (len < 10 ? len : 10); i++)
+	{
+		printf(" %.2x", (unsigned char)data[i]);
+	}
+	printf("\n");
+}
+
 
 /**
   * print_python_list - Prints information about python list objects
@@ -30,21 +67,8 @@ void print_python_list(PyObject *p)
 		item = ((PyListObject *)p)->ob_item[i];
 		item_type = (((PyObject *)(item))->ob_type)->tp_name;
 		printf("Element %d: %s\n", (int) i, item_type);
+		if (PyBytes_Check(item))
+			print_python_bytes(item);
 	}
 }
 
-
-/**
-  * print_python_bytes - Prints information about python byte objects
-  * @p: PyObject pointer to print info about
-  * Return: Nothing
-  */
-void print_python_bytes(PyObject *p)
-{
-	printf("[.] bytes object info\n");
-	if (!PyBytes_Check(p))
-	{
-		printf("  [ERROR] Invalid Bytes Object\n");
-		return;
-	}
-}
