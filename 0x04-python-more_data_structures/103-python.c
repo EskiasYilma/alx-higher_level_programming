@@ -1,4 +1,5 @@
 #include "Python.h"
+
 /**
   * print_python_list - Prints information about python list objects
   * @p: PyObject pointer to print info about
@@ -19,7 +20,7 @@ void print_python_list(PyObject *p)
 	}
 
 	list_object = (PyListObject *)p;
-	size = (((PyVarObject *)(p))->ob_size)
+	size = (((PyVarObject *)(p))->ob_size);
 	allocated = list_object->allocated;
 
 	printf("[*] Size of the Python List = %d\n", (int) size);
@@ -40,5 +41,10 @@ void print_python_list(PyObject *p)
   */
 void print_python_bytes(PyObject *p)
 {
-	printf("None");
+	printf("[.] bytes object info\n");
+	if (!PyBytes_Check(p))
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
 }
