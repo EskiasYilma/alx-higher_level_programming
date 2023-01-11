@@ -1,6 +1,6 @@
 #include "Python.h"
 /**
-  * print_python_list - Prints information about python objects
+  * print_python_list - Prints information about python list objects
   * @p: PyObject pointer to print info about
   * Return: Nothing
   */
@@ -23,4 +23,13 @@ void print_python_list(PyObject *p)
 		item_type = Py_TYPE(item)->ob_size->tp_name;
 		printf("Element %d: %s\n", (int) i, item_type);
 	}
+}
+/**
+  * print_python_bytes - Prints information about python byte objects
+  * @p: PyObject pointer to print info about
+  * Return: Nothing
+  */
+void print_python_bytes(PyObject *p)
+{
+
 }
