@@ -11,6 +11,13 @@ void print_python_list(PyObject *p)
 	const char *item_type;
 	PyListObject *list_object;
 
+	printf("[*] Python list info\n");
+	if (!PyList_Check(p))
+	{
+		printf("  [ERROR] Invalid List Object\n");
+		return;
+	}
+
 	list_object = (PyListObject *)p;
 	size = PyList_Size(p);
 	allocated = list_object->allocated;
@@ -19,11 +26,13 @@ void print_python_list(PyObject *p)
 	printf("[*] Allocated = %d\n", (int)allocated);
 	for (i = 0; i < size; i++)
 	{
-		item = PyList_GetItem(p, i);
-		item_type = Py_TYPE(item)->ob_size->tp_name;
+		item = ((PyListObject *)p)->ob_item[i];
+		item_type = (((PyObject *)(item))->ob_type)->tp_name;
 		printf("Element %d: %s\n", (int) i, item_type);
 	}
 }
+
+
 /**
   * print_python_bytes - Prints information about python byte objects
   * @p: PyObject pointer to print info about
@@ -31,5 +40,5 @@ void print_python_list(PyObject *p)
   */
 void print_python_bytes(PyObject *p)
 {
-
+	printf("None");
 }
