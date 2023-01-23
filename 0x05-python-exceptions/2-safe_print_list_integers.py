@@ -6,7 +6,6 @@ def safe_print_list_integers(my_list=[], x=0):
             print("{:d}".format(my_list[i]), end="")
             leng += 1
         except Exception as e:
-            i += 1
-            continue
+            pass
     print("")
     return leng
