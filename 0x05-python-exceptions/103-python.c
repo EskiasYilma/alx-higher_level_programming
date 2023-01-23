@@ -87,7 +87,7 @@ void print_python_list(PyObject *p)
 		printf("Element %d: %s\n", (int) i, item_type);
 		if (PyBytes_Check(item))
 			print_python_bytes(item);
-		else if (PyFloat_Check(item))
+		if (PyFloat_Check(item))
 			print_python_float(item);
 	}
 }
