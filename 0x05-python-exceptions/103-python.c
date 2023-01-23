@@ -42,8 +42,12 @@ void print_python_bytes(PyObject *p)
 
 	printf("  size: %d\n", (int)len);
 	printf("  trying string: %s\n", data);
-	printf("  first %d bytes: ", len < 10 ? len : 10);
-	for (i = 0; i < 10 && i < len + 1; i++)
+	if (len < 10)
+		printf("  first %d bytes:", len + 1);
+	else
+		printf("  first 10 bytes:");
+
+	for (i = 0; i < (len < 10 ? len : 10); i++)
 	{
 		printf(" %02x", (unsigned char)data[i]);
 	}
