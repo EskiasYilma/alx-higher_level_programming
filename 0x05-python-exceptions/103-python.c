@@ -49,7 +49,7 @@ void print_python_bytes(PyObject *p)
 
 	for (i = 0; i < (len < 10 ? len : 10); i++)
 	{
-		printf(" %.2x", (unsigned char)data[i]);
+		printf(" %02x", (unsigned char)data[i]);
 	}
 	printf("\n");
 }
