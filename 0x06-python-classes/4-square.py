@@ -9,7 +9,7 @@ class Square:
     Class Docstring
     """
 
-    def __init__(self, size: int=0):
+    def __init__(self, size: int = 0):
         """
         Initialize class Docstring
         """
