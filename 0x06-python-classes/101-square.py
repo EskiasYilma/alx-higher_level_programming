@@ -76,7 +76,7 @@ class Square:
         Public instance method Docstring
         """
         if self.__size == 0:
-            return "\n"
+            return ""
         square = ""
         for i in range(self.__position[1]):
             square += "\n"
