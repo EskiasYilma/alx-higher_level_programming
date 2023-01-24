@@ -13,8 +13,8 @@ class Square:
         """
         Initialize class Docstring
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -46,9 +46,9 @@ class Square:
         """
         Setter method Docstring
         """
-        if type(value) != tuple or len(value) != 2 or \
-                not all([type(i) == int for i in value]) or \
-                not all([i >= 0 for i in value]):
+        if (type(value) != tuple) or (len(value) != 2) or \
+                (not all([type(i) == int for i in value])) or \
+                (not all([i >= 0 for i in value])):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
