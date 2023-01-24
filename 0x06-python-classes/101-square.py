@@ -52,19 +52,7 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
-    def __repr__(self):
-        """
-        Public instance method Docstring
-        """
-        return (self.print_str())
-
-    def area(self):
-        """
-        Public instance method Docstring
-        """
-        return self.__size * self.__size
-
-    def print_str(self):
+    def __str__(self):
         """
         Public instance method Docstring
         """
@@ -81,8 +69,14 @@ class Square:
                 square += "\n"
         return square
 
+    def area(self):
+        """
+        Public instance method Docstring
+        """
+        return self.__size * self.__size
+
     def my_print(self):
         """
         Public instance method Docstring
         """
-        print(self.print_str())
+        print(self.__str__())
