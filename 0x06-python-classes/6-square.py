@@ -61,8 +61,7 @@ class Square:
         Public instance method Docstring
         """
         if self.__size == 0:
-            print()
-            return
+            print("")
         for _ in range(self.__position[1]):
             print()
         for _ in range(self.__size):
