@@ -39,7 +39,7 @@ class Square:
         """
         Property method Docstring
         """
-        return self.__size
+        return self.__position
 
     @position.setter
     def position(self, value: tuple):
