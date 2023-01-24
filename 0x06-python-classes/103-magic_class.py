@@ -2,6 +2,7 @@
 """
 Module Docstring
 """
+import dis
 import math
 
 
@@ -10,27 +11,19 @@ class MagicClass:
     Class Docstring
     """
 
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         """
         Initialize class Docstring
         """
-        self.__radius = 0
-        if (type(radius) is not int) or (type(radius) is not float):
+        if type(radius) not in (int, float):
             raise TypeError("radius must be a number")
         self.__radius = radius
-
-    @property
-    def radius(self):
-        """
-        Property method Docstring
-        """
-        return self.__radius
 
     def area(self):
         """
         Public instance method Docstring
         """
-        return math.pi * self._radius * self.__radius
+        return math.pi * (self._radius ** 2)
 
     def circumference(self):
         """
