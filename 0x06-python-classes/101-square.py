@@ -58,31 +58,27 @@ class Square:
         """
         return self.__size * self.__size
 
-    def __repr__(self):
-        """
-        Public instance method Docstring
-        """
-        return (self.printable())
-
-    def printable(self):
-        """
-        Public instance method Docstring
-        """
-        prnt = ""
-        if self.__size == 0:
-            prnt += "\n"
-            return prnt
-        for i in range(self.__position[1]):
-            prnt += "\n"
-        for i in range(self.__size):
-            prnt += (" " * self.__position[0])
-            prnt += ("#" * self.__size)
-            if i is not (self.__size - 1):
-                prnt += "\n"
-        return prnt
-
     def my_print(self):
         """
         Public instance method Docstring
         """
-        print(self.printable())
+        if self.__size == 0:
+            print()
+            return
+        for _ in range(self.__position[1]):
+            print()
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
+
+    def __str__(self):
+        """
+        Public instance method Docstring
+        """
+        if self.__size == 0:
+            return ""
+        square = ""
+        for _ in range(self.__position[1]):
+            square += "\n"
+        for _ in range(self.__size):
+            square += " " * self.__position[0] + "#" * self.__size + "\n"
+        return square
