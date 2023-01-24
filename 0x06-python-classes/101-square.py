@@ -63,22 +63,25 @@ class Square:
         Public instance method Docstring
         """
         if self.__size == 0:
-            print()
+            print("")
             return
-        for _ in range(self.__position[1]):
-            print()
-        for _ in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
+        for i in range(self.__position[1]):
+            print("")
+        for i in range(self.__size):
+            print(" " * self.__position[0], end="")
+            print("#" * self.__size)
 
     def __str__(self):
         """
         Public instance method Docstring
         """
         if self.__size == 0:
-            return ""
+            return "\n"
         square = ""
-        for _ in range(self.__position[1]):
+        for i in range(self.__position[1]):
             square += "\n"
-        for _ in range(self.__size):
+        for i in range(self.__size):
             square += " " * self.__position[0] + "#" * self.__size + "\n"
+            if i is not (self.__size - 1):
+                square += "\n"
         return square
