@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import math
 """
 Module Docstring
 """
+import math
 
 
 class MagicClass:
