@@ -11,7 +11,7 @@ class MagicClass:
     Class Docstring
     """
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """
         Initialize class Docstring
         """
