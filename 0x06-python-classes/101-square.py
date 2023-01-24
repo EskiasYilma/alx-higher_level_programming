@@ -82,6 +82,4 @@ class Square:
             square += "\n"
         for i in range(self.__size):
             square += " " * self.__position[0] + "#" * self.__size + "\n"
-            if i is not (self.__size - 1):
-                square += "\n"
         return square
