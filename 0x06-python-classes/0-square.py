@@ -6,11 +6,11 @@ Module Docstring
 
 class Square:
     """
-    Square Class
+    Class Docstring
     """
 
     def __init__(self):
         """
-        Initialize square class
+        Initialize class Docstring
         """
         pass
