@@ -15,9 +15,23 @@ class MagicClass:
         """
         Initialize class Docstring
         """
-        if type(radius) not in (int, float):
-            raise TypeError("radius must be a number")
         self.__radius = radius
+
+    @property
+    def radius(self):
+        """
+        Property method Docstring
+        """
+        return self.__radius
+
+    @radius.setter
+    def radius(self, value):
+        """
+        Setter method Docstring
+        """
+        if type(value) not in (int, float):
+            raise TypeError("radius must be a number")
+        self.__radius = value
 
     def area(self):
         """
@@ -30,8 +44,3 @@ class MagicClass:
         Public instance method Docstring
         """
         return 2 * math.pi * self.__radius
-
-
-dis.dis(MagicClass.__init__)
-dis.dis(MagicClass.area)
-dis.dis(MagicClass.circumference)
