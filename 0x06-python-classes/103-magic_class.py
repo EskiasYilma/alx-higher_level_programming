@@ -29,8 +29,10 @@ class MagicClass:
         """
         Setter method Docstring
         """
-        if type(value) not in (int, float):
+        if not isinstance(value, (int, float)):
             raise TypeError("radius must be a number")
+        if value < 0:
+            raise ValueError("radius must be greater than or equal to 0")
         self.__radius = value
 
     def area(self):
