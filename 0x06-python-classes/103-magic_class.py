@@ -11,10 +11,16 @@ class MagicClass:
     Class Docstring
     """
 
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         """
         Initialize class Docstring
         """
+        if radius is None:
+            raise ValueError("radius can not be None")
+        if not isinstance(radius, (int, float)):
+            raise TypeError("radius must be a number")
+        if radius < 0:
+            raise ValueError("radius must be greater than or equal to 0")
         self.__radius = radius
 
     @property
@@ -29,6 +35,8 @@ class MagicClass:
         """
         Setter method Docstring
         """
+        if value is None:
+            raise ValueError("radius can not be None")
         if not isinstance(value, (int, float)):
             raise TypeError("radius must be a number")
         if value < 0:
