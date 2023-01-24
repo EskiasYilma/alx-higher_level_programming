@@ -31,6 +31,7 @@ class MagicClass:
         """
         return 2 * math.pi * self.__radius
 
+
 dis.dis(MagicClass.__init__)
 dis.dis(MagicClass.area)
 dis.dis(MagicClass.circumference)
