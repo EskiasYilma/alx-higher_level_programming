@@ -1,0 +1,65 @@
+The say_my_name Module:
+=======================
+
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Documentation Test:
+
+    >>> len(__import__("3-say_my_name").__doc__) > 0
+    True
+
+    >>> len(__import__("3-say_my_name").say_my_name.__doc__) > 0
+    True
+
+Correct usage:
+
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+Error cases:
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+    >>> say_my_name("John", "Bon", "Jovi")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> say_my_name(None, 8)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Lorem", (8, 312))
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(78)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(123, "Calli")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(6, 12)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Eskias", 99)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name({"Lorem": "Ipsum"})
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name((4, 22), "Ipsum")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string

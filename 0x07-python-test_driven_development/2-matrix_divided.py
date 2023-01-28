@@ -1,37 +1,28 @@
 #!/usr/bin/python3
 """
 This is the matrix_divided module
+
+Returns All elements of the matrix divided by div, rounded to 2 decimal places
 """
 
 
 def matrix_divided(matrix, div):
     """
-    This is the matrix_divided function
+    matrix_divided Function Docstring
     """
-    new_matrix = []
     if div == 0:
-        raise ZeroDivisionError(
-            "division by zero")
+        raise ZeroDivisionError("division by zero")
     if not isinstance(div, (int, float)):
-        raise TypeError(
-            "div must be a number")
-    if (not (isinstance(matrix, list))) or (matrix is None) or \
+        raise TypeError("div must be a number")
+    if (not isinstance(matrix, list)) or (matrix is None) or \
             (len(matrix) == 0) or (len(matrix[0]) == 0):
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats")
-    try:
+    if any(len(row) != len(matrix[0]) for row in matrix):
+        raise TypeError("Each row of the matrix must have the same size")
+    if any(not isinstance(i, (int, float)) for row in matrix for i in row):
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
 
-        for i, j in enumerate(matrix):
-            if len(matrix[i]) != len(matrix[0]):
-                raise TypeError(
-                    "Each row of the matrix must have the same size")
-            new_matrix.append(j[:])
-            for x, y in enumerate(j):
-                if not isinstance(y, (int, float)):
-                    raise TypeError(
-                        "matrix must be a matrix (list of lists) of integers/floats")
-                new_matrix[i][x] = round(y / div, 2)
-    except Exception:
-        raise
-    else:
-        return new_matrix
+    new_matrix = [[round(i / div, 2) for i in row] for row in matrix]
+    return new_matrix

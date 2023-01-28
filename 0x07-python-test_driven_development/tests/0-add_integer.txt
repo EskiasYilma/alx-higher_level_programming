@@ -1,9 +1,9 @@
-The Add_Integer Module:
+The add_integer Module:
 =======================
 
     >>> add_integer = __import__("0-add_integer").add_integer
 
-Make Sure Documentation Exists:
+Documentation Test:
 
     >>> len(__import__("0-add_integer").__doc__) > 0
     True
@@ -26,7 +26,7 @@ Usage for correct outputs:
     98
 
 Error outputs:
-    >>> print(add_integer(4, "School"))
+    >>> print(add_integer(4, "string"))
     Traceback (most recent call last):
     TypeError: b must be an integer
 

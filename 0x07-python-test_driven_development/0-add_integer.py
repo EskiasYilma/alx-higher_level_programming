@@ -8,7 +8,7 @@ Returns the sum of two numbers a and b
 
 def add_integer(a, b=98):
     """
-    Add integer
+    add_integer Function Docstring
     """
     try:
         if type(a) not in (int, float):
