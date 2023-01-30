@@ -48,6 +48,15 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-1, -2, -3, 4, 5]), 5)
         self.assertEqual(max_integer([-5, 4, 3, 2, 1]), 4)
 
+    def test_length_one(self):
+        """
+        test_length_one
+
+        Tests for max_integer using a list with only one integer (positive or negative)
+        """
+        self.assertEqual(max_integer([1]), 1)
+        self.assertEqual(max_integer([-1]), -1)
+
 
 if __name__ == '__main__':
     unittest.main()
