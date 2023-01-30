@@ -62,6 +62,7 @@ class Rectangle:
         """
         Public instance method Docstring
         """
-        if width == 0 or height == 0:
+        if (self.__width == 0) or (self.__height == 0):
             return 0
-        return 2 * (self.__width + self.__height)
+        else:
+            return 2 * (self.__width + self.__height)
