@@ -20,9 +20,6 @@ def nqueens(n):
     """
     Check current position for previous incoming attacks
     """
-    if n < 4:
-        print('N must be at least 4')
-        sys.exit(1)
 
     board = [-1] * n
 
@@ -45,4 +42,15 @@ if __name__ == '__main__':
     if len(sys.argv) != 2:
         print('Usage: nqueens N')
         sys.exit(1)
-    nqueens(int(sys.argv[1]))
+    try:
+        if not int(sys.argv[1]):
+            print('N must be a number')
+            sys.exit(1)
+    except Exception:
+        print('N must be a number')
+        sys.exit(1)
+    if int(sys.argv[1]) < 4:
+        print('N must be at least 4')
+        sys.exit(1)
+    else:
+        nqueens(int(sys.argv[1]))
