@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Module Docstring for matrix_mul(m_a, m_b)
+Module Docstring for lazy_matrix_mul(m_a, m_b)
 
 Returns a multiplication of 2 matrices
 """
 import numpy as np
 
 
-def matrix_mul(m_a, m_b):
+def lazy_matrix_mul(m_a, m_b):
     """
     Function to return the multiplication of 2 matrices m_a and m_b
     Checks:
@@ -57,13 +57,13 @@ def matrix_mul(m_a, m_b):
 
 # m_a = [[1, 2], [3, 4]]
 # m_b = [[1, 2], [3, 4]]
-# print(matrix_mul(m_a, m_b))
+# print(lazy_matrix_mul(m_a, m_b))
 # [[ 7 10]
 #  [15 22]]
 
 # m_a = [[1, 2]]
 # m_b = [[3, 4], [5, 6]]
-# print(matrix_mul(m_a, m_b))
+# print(lazy_matrix_mul(m_a, m_b))
 # [[13, 16]]
 
 # m_a = [[1, 2, 3]]
@@ -78,7 +78,7 @@ def matrix_mul(m_a, m_b):
 
 # m_a = [[1, 2], [4, 5], [6, 7]]
 # m_b = [[1, 2, 3], [4, 5, 6]]
-# print(matrix_mul(m_a, m_b))
+# print(lazy_matrix_mul(m_a, m_b))
 # [[ 9 12 15]
 #  [24 33 42]
 #  [34 47 60]]
@@ -90,25 +90,25 @@ def matrix_mul(m_a, m_b):
 #  [15 22]]
 
 # m_b = [[1, 2], [3, 4, 5]]
-# print(matrix_mul(m_a, m_b))
+# print(lazy_matrix_mul(m_a, m_b))
 # Traceback (most recent call last):
 # NameError: name 'm_a' is not defined. Did you mean: 'm_b'?
 
 # m_a = []
 # m_b = [[1, 2], [3, 4]]
-# print(matrix_mul(m_a, m_b))
+# print(lazy_matrix_mul(m_a, m_b))
 # Traceback (most recent call last):
 # ValueError: m_a can't be empty
 
 # m_a = [[1, 2], [3, 4]]
 # m_b = [[1, 2], [3, 4]]
-# print(matrix_mul(m_a, m_b))
+# print(lazy_matrix_mul(m_a, m_b))
 # [[ 7 10]
 #  [15 22]]
 
 # m_a = [[1, 2]]
 # m_b = [[3, 4], [5, 6]]
-# print(matrix_mul(m_a, m_b))
+# print(lazy_matrix_mul(m_a, m_b))
 # [[13, 16]]
 
 # m_a = []
@@ -162,4 +162,4 @@ def matrix_mul(m_a, m_b):
 # m_b = [[4], [5], [6]]
 # Traceback (most recent call last):
 # ValueError: m_a and m_b can't be multiplied
-print(matrix_mul(m_a, m_b))
+print(lazy_matrix_mul(m_a, m_b))
