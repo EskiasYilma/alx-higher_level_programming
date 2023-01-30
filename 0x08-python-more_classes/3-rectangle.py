@@ -79,9 +79,3 @@ class Rectangle:
                 rec += "#"
             rec += "\n"
         return rec
-
-    def print(self):
-        """
-        Public instance method Docstring
-        """
-        print(self.__str__())
