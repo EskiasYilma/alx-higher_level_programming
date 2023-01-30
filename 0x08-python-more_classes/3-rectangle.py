@@ -71,11 +71,12 @@ class Rectangle:
         """
         Public instance method Docstring
         """
-        if self.__width == 0 or self.__height == 0:
-            return ""
         rec = ""
-        for i in range(self.__height):
-            for j in range(self.__width):
-                rec += "#"
-            rec += "\n"
-        return rec
+        if self.__width < 0 or self.__height < 0:
+            return rec
+        else:
+            for i in range(self.__height):
+                for j in range(self.__width):
+                    rec += "#"
+                rec += "\n"
+            return rec
