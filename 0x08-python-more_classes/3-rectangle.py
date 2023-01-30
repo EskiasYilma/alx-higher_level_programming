@@ -80,4 +80,4 @@ class Rectangle:
                     rec += "#"
                 if i < (self.__height - 1):
                     rec += "\n"
-            return rec
+        return rec
