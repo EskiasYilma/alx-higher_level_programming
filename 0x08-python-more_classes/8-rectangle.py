@@ -89,14 +89,23 @@ class Rectangle:
         return rec
 
     def __repr__(self):
+        """
+        Public instance method Docstring
+        """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
+        """
+        Public instance method Docstring
+        """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """
+        Public instance method Docstring
+        """
         if not (isinstance(rect_1, Rectangle)):
             raise TypeError("rect_1 must be an instance of Rectangle")
         else:
