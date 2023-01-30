@@ -80,4 +80,6 @@ class Rectangle:
                     rec += "#"
                 if i is not (self.__height - 1):
                     rec += "\n"
+                else:
+                    pass
             return rec
