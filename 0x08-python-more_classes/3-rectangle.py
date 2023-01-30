@@ -72,7 +72,7 @@ class Rectangle:
         Public instance method Docstring
         """
         rec = ""
-        if self.__width < 0 or self.__height < 0:
+        if self.__width == 0 or self.__height == 0:
             return rec
         else:
             for i in range(self.__height):
