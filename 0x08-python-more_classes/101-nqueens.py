@@ -22,7 +22,7 @@ def nqueens(n):
     """
     if n < 4:
         print('N must be at least 4')
-        return
+        sys.exit(1)
 
     board = [-1] * n
 
