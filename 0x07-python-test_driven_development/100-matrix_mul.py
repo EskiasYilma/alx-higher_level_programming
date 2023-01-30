@@ -81,10 +81,9 @@ def matrix_mul(m_a, m_b):
 # print(matrix_mul(m_a, m_b))
 # [[9, 12, 15], [24, 33, 42], [34, 47, 60]]
 
-# m_a = []
 # m_b = [[1, 2], [3, 4]]
-# Traceback (most recent call last):
-# ValueError: m_a can't be empty
+# m_a = m_b
+# [[7, 10], [15, 22]]
 
 # m_b = [[1, 2], [3, 4, 5]]
 # print(matrix_mul(m_a, m_b))
