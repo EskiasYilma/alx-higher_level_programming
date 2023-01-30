@@ -76,8 +76,7 @@ class Rectangle:
             return rec
         else:
             for i in range(self.__height):
-                for j in range(self.__width):
-                    rec += "#"
-                if i < (self.__height - 1):
+                rec += ("#" * self.__width)
+                if i is not (self.__height - 1):
                     rec += "\n"
         return rec
