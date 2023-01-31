@@ -10,8 +10,8 @@
 
 void print_python_string(PyObject *p)
 {
-	char *str;
-	Py_ssize_t size;
+	char *s;
+	Py_ssize_t len;
 	PyObject *enc, *bytes;
 
 	if (PyUnicode_Check(p))
@@ -28,10 +28,10 @@ void print_python_string(PyObject *p)
 			PyErr_Clear();
 		else
 		{
-			size = PyBytes_Size(enc);
-			str = PyBytes_AsString(enc);
-			printf("  length: %zd\n", size);
-			printf("  value: %s\n", str);
+			len = PyBytes_Size(enc);
+			s = PyBytes_AsString(enc);
+			printf("  length: %zd\n", len);
+			printf("  value: %s\n", s);
 			Py_DECREF(enc);
 		}
 	}
@@ -40,10 +40,10 @@ void print_python_string(PyObject *p)
 		printf("[.] string object info\n");
 		printf("  type: compact ascii\n");
 
-		size = PyBytes_Size(p);
-		str = PyBytes_AsString(p);
-		printf("  length: %zd\n", size);
-		printf("  value: %s\n", str);
+		len = PyBytes_Size(p);
+		s = PyBytes_AsString(p);
+		printf("  length: %zd\n", len);
+		printf("  value: %s\n", s);
 	}
 	else
 	{
