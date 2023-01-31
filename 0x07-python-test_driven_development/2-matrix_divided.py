@@ -8,16 +8,19 @@ Returns All elements of the matrix divided by div, rounded to 2 decimal places
 
 def matrix_divided(matrix, div):
     """
-    Function to divide all elements of a matrix "matrix" with div and return a new matrix with elements rounded to 2 decimal places
+    Function to divide all elements of a matrix "matrix" with div \
+    and return a new matrix with elements rounded to 2 decimal \
+    places
     Checks:
         - if div is a number and is not Zero
         - if div is of type int or float
-        - if matrix is of type list or list of lists of ints and floats and is not none
+        - if matrix is of type list or list of lists of ints and\
+        floats and is not none
         - if each row of matrix have the same size
-        - if elements of a matrix are of type int or float 
+        - if elements of a matrix are of type int or float
     """
     if not isinstance(div, (int, float)):
-        raise TypeError("div must be a number")    
+        raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if (not isinstance(matrix, list)) or (matrix is None) or \

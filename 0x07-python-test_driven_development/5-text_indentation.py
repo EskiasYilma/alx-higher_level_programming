@@ -2,13 +2,16 @@
 """
 This is the text_indentation module
 
-Returns print text "text" with the exception of the characters .", "?", ":" after which if encountered, will print two new lines.
+Returns print text "text" with the exception of the \
+characters .", "?", ":" after which if encountered, will print two new lines.
 """
 
 
 def text_indentation(text):
     """
-    Function to print text "text" with the exception of the characters .", "?", ":" after which if encountered, will print two new lines.
+    Function to print text "text" with the exception of the \
+    characters .", "?", ":" after which if encountered, \
+    will print two new lines.
     Checks:
         - if text is of type string and text exists
         - if text contains the characters ".", "?", ":"
