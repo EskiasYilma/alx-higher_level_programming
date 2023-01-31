@@ -6,15 +6,8 @@ Module Docstring
 
 class LockedClass:
     """
-    LockedClass Docstring
+    Only allows instatiation of an attribute named first_name
+    The special attribute __slots__ allows you to explicitly state which instance attributes you expect your object instances to have, with the expected results
     """
 
-    def __setattr__(self, key, value):
-        """
-        Fucntion to check and validate if the passed instance is first_name
-        """
-        if not key or key != 'first_name':
-            raise AttributeError(
-                "'LockedClass' object has no attribute '{}'".format(key))
-        else:
-            super().__setattr__(key, value)
+    __slots__ = ["first_name"]
