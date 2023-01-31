@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is the matrix_divided module
+This is the matrix_divided module Docstring
 
 Returns All elements of the matrix divided by div, rounded to 2 decimal places
 """
@@ -8,12 +8,18 @@ Returns All elements of the matrix divided by div, rounded to 2 decimal places
 
 def matrix_divided(matrix, div):
     """
-    matrix_divided Function Docstring
+    Function to divide all elements of a matrix "matrix" with div and return a new matrix
+    Checks:
+        - if div is Zero
+        - if div is of type int or float
+        - if matrix is of type list or list of lists of ints and floats and is not none
+        - if each row of matrix have the same size
+        - if elements of a matrix are of type int or float 
     """
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")    
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    if not isinstance(div, (int, float)):
-        raise TypeError("div must be a number")
     if (not isinstance(matrix, list)) or (matrix is None) or \
             (len(matrix) == 0) or (len(matrix[0]) == 0):
         raise TypeError(
