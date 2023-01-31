@@ -1,6 +1,11 @@
 The say_my_name Module:
 =======================
 
+Using ``say_my_name``
+-------------------
+
+Import ``say_my_name`` function from ``3-say_my_name`` module
+
     >>> say_my_name = __import__("3-say_my_name").say_my_name
 
 Documentation Test:

@@ -1,6 +1,11 @@
 The text_indentation Module:
 =======================
 
+Using ``text_indentation``
+-------------------
+
+Import ``text_indentation`` function from ``5-text_indentation`` module
+
     >>> text_indentation = __import__("5-text_indentation").text_indentation
 
 Documentation Test:

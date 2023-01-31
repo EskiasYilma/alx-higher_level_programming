@@ -1,14 +1,19 @@
 The print_square Module:
 =======================
 
+Using ``print_square``
+-------------------
+
+Import ``print_square`` function from ``4-print_square`` module
+
     >>> print_square = __import__("4-print_square").print_square
 
 Documentation Test:
 
-    >>> print(len(__import__("4-print_square").__doc__) > 0)
+    >>> len(__import__("4-print_square").__doc__) > 0
     True
 
-    >>> print(len(__import__("4-print_square").print_square.__doc__) > 0)
+    >>> len(__import__("4-print_square").print_square.__doc__) > 0
     True
 
 Correct Usage:
