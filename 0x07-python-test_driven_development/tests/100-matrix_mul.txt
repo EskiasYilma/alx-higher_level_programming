@@ -1,0 +1,127 @@
+The matrix_mul Module:
+=======================
+
+    >>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+Documentation Test:
+
+    >>> len(__import__("100-matrix_mul").__doc__) > 0
+    True
+
+    >>> len(__import__("100-matrix_mul").matrix_mul.__doc__) > 0
+    True
+
+Correct usage:
+
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[7, 10], [15, 22]]
+
+    >>> m_a = [[1, 2]]
+    >>> m_b = [[3, 4], [5, 6]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[13, 16]]
+
+    >>> m_a = [[1, 2], [4, 5], [6, 7]]
+    >>> m_b = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[9, 12, 15], [24, 33, 42], [34, 47, 60]]
+
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> m_a = m_b
+    >>> print(matrix_mul(m_a, m_b))
+    [[7, 10], [15, 22]]
+
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[7, 10], [15, 22]]
+
+    >>> m_a = [[1, 2]]
+    >>> m_b = [[3, 4], [5, 6]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[13, 16]]
+
+    >>> m_a = [[1, -2], [3, 4]]
+    >>> m_b = [[1, 2], [3, -4]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[-5, 10], [15, -10]]
+
+    >>> m_a = [[2]]
+    >>> m_b = [[2]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[4]]
+
+    >>> m_a = [[1], [2], [3]]
+    >>> m_b = [[2, 3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[2, 3, 4], [4, 6, 8], [6, 9, 12]]
+
+Error cases:
+
+    >>> m_a = None
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+    >>> m_b = None
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_b can't be empty
+
+    >>> m_a = [[1, 2, 3]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = [[1, 2, 3], [4, 5]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    TypeError: each row of m_b must be of the same size
+
+    >>> m_b = [[1, 2], [3, 4, 5]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    TypeError: each row of m_b must be of the same size
+
+    >>> m_a = []
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+    >>> m_a = []
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+    >>> m_a = [[]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+    >>> m_a = [[2, 3, 4]]
+    >>> m_b = [[5, 6, 7]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> m_a = [[1], [2]]
+    >>> m_b = [[4], [5]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> m_a = [[1], [2], [3]]
+    >>> m_b = [[4], [5], [6]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
