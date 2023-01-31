@@ -2,7 +2,7 @@
 """
 This is the add_integer module
 
-Returns the sum of two numbers a and b
+Returns the sum of two integers a and b
 """
 
 
@@ -10,8 +10,8 @@ def add_integer(a, b=98):
     """
     Function to add two integers a and b
     Checks:
-        - if types are of float or int
-        - if both exist
+        - if a and b are of float or integer type
+        - if both a and b exist
     """
     try:
         if type(a) not in (int, float):

@@ -22,6 +22,9 @@ Correct usage:
     >>> say_my_name("Bob")
     My name is Bob 
 
+    >>> say_my_name("50", "Cent")
+    My name is 50 Cent
+
 Error cases:
 
     >>> say_my_name()
@@ -61,5 +64,9 @@ Error cases:
     TypeError: first_name must be a string
 
     >>> say_my_name((4, 22), "Ipsum")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name({}, {})
     Traceback (most recent call last):
     TypeError: first_name must be a string

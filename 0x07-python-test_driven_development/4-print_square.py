@@ -8,7 +8,11 @@ Returns prints a square of size "size" with the character #
 
 def print_square(size):
     """
-    print_square Function docstring
+    Function to print a square of size "size" using the character "#"
+    Checks:
+        - If size is of type integer
+        - If size is greater than Zero and of type float
+        - If size equals Zero
     """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")

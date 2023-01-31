@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 """
-This is the print_square module
+This is the text_indentation module
 
-Returns prints a square of size "size" with the character #
+Returns print text "text" with the exception of the characters .", "?", ":" after which if encountered, will print two new lines.
 """
 
 
 def text_indentation(text):
     """
-    print_square Function docstring
+    Function to print text "text" with the exception of the characters .", "?", ":" after which if encountered, will print two new lines.
+    Checks:
+        - if text is of type string and text exists
+        - if text contains the characters ".", "?", ":"
     """
     if not isinstance(text, str) or len(text) < 0:
         raise TypeError("text must be a string")

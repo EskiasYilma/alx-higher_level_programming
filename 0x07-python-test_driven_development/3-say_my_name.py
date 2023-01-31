@@ -8,7 +8,11 @@ Returns My name is <first name> <last name>
 
 def say_my_name(first_name, last_name=""):
     """
-    say_my_name Function Docstring
+    Function to return "My name is <first name> <last name>"
+    
+    Checks:
+        - if first name and last name are of type string
+
     """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
