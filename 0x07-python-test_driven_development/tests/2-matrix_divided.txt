@@ -1,4 +1,4 @@
-The Matrix_Divided Module:
+The matrix_divided Module:
 =======================
 
 Using ``matrix_divided``
