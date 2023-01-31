@@ -9,9 +9,6 @@ class LockedClass:
     LockedClass Docstring
     """
 
-    def __init__(self):
-        pass
-
     def __setattr__(self, key, value):
         """
         Fucntion to check and validate if the passed instance is first_name
@@ -19,4 +16,6 @@ class LockedClass:
         if key != 'first_name':
             raise AttributeError(
                 "'LockedClass' object has no attribute '{}'".format(key))
-
+        else:
+            def __init__(self):
+                self.key = value
