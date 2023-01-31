@@ -12,7 +12,7 @@ void print_python_string(PyObject *p)
 {
 	char *str;
 	Py_ssize_t size;
-	PyObject *repr, *bytes;
+	PyObject *enc, *bytes;
 
 	if (PyUnicode_Check(p))
 	{
@@ -23,16 +23,16 @@ void print_python_string(PyObject *p)
 		else
 			printf("unicode object\n");
 
-		repr = PyUnicode_AsEncodedString(p, "utf-8", "strict");
-		if (repr == NULL)
+		enc = PyUnicode_AsEncodedString(p, "utf-8", "strict");
+		if (enc == NULL)
 			PyErr_Clear();
 		else
 		{
-			size = PyBytes_Size(repr);
-			str = PyBytes_AsString(repr);
+			size = PyBytes_Size(enc);
+			str = PyBytes_AsString(enc);
 			printf("  length: %zd\n", size);
 			printf("  value: %s\n", str);
-			Py_DECREF(repr);
+			Py_DECREF(enc);
 		}
 	}
 	else if (PyBytes_Check(p))
