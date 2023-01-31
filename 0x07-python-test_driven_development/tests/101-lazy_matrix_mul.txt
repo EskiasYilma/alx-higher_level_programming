@@ -81,4 +81,94 @@ Correct usage:
 
 Error cases:
 
+    >>> m_a = [[2, 3, 4]]
+    >>> m_b = [[5, 6, 7]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> m_a = [[1], [2]]
+    >>> m_b = [[4], [5]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> m_a = [[1], [2], [3]]
+    >>> m_b = [[4], [5], [6]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> m_a = None
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    TypeError: m_a must be a list
+
+    >>> m_b = None
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    TypeError: m_b must be a list
+
+    >>> m_a = [[1, 2, 3]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = [[1, 2, 3], [4, 5]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    TypeError: each row of m_b must be of the same size
+
+    >>> m_b = [[1, 2], [3, 4, 5]]
+    >>> print(lazy_matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    TypeError: each row of m_b must be of the same size
+
+    >>> m_a = []
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(lazy_matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+    >>> m_a = [[]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+    >>> m_a = []
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+    >>> m_b = []
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    ValueError: m_b can't be empty
+
+    >>> m_b = [[]]
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    ValueError: m_b can't be empty
+
+
+    >>> m_a = [["string", 2], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    TypeError: m_a should contain only integers or floats
+
+
+    >>> m_a = [[-1.8976, "alx"], [3, -4.5]]
+    >>> m_b = [[1, -2.7], [-3.9, "4"]]
+    >>> print(lazy_matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    TypeError: m_a should contain only integers or floats
 
