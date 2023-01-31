@@ -33,10 +33,10 @@ Correct usage:
     >>> print(matrix_mul(m_a, m_b))
     [[7, 10], [15, 22]]
 
-    >>> m_a = [[1, 2], [3, 4]]
-    >>> m_b = [[1, 2], [3, 4]]
+    >>> m_a = [[1.8, 2.9], [3.9, 4.6]]
+    >>> m_b = [[1.9, 2.8], [3.4, 4.7]]
     >>> print(matrix_mul(m_a, m_b))
-    [[7, 10], [15, 22]]
+    [[13.28, 18.67], [23.049999999999997, 32.54]]
 
     >>> m_a = [[1, 2]]
     >>> m_b = [[3, 4], [5, 6]]
@@ -58,6 +58,11 @@ Correct usage:
     >>> print(matrix_mul(m_a, m_b))
     [[2, 3, 4], [4, 6, 8], [6, 9, 12]]
 
+    >>> m_a = [[2.83, 2], [3, 4.65]]
+    >>> m_b = [[1, 2.75], [3.9, 4]]
+    >>> print(matrix_mul(m_a, m_b))    
+    [[10.629999999999999, 15.7825], [21.135, 26.85]]
+
 Error cases:
 
     >>> m_a = None
@@ -71,6 +76,36 @@ Error cases:
     >>> print(matrix_mul(m_a, m_b))
     Traceback (most recent call last):
     TypeError: m_b must be a list
+
+    >>> m_a = {}
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    TypeError: m_a must be a list
+
+    >>> m_b = {}
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    TypeError: m_b must be a list
+
+    >>> m_a = [{}]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    TypeError: m_a must be a list of lists
+
+    >>> m_a = ["string"]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    TypeError: m_a must be a list of lists
+
+    >>> m_b = [{}]
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    TypeError: m_b must be a list of lists
 
     >>> m_a = [[1, 2, 3]]
     >>> m_b = [[1, 2], [3, 4]]
@@ -95,17 +130,23 @@ Error cases:
     Traceback (most recent call last):
     ValueError: m_a can't be empty
 
-    >>> m_a = []
-    >>> m_b = [[1, 2], [3, 4]]
+    >>> m_b = []
+    >>> m_a = [[1, 2], [3, 4]]
     >>> print(matrix_mul(m_a, m_b))
     Traceback (most recent call last):
-    ValueError: m_a can't be empty
+    ValueError: m_b can't be empty
 
     >>> m_a = [[]]
     >>> m_b = [[1, 2], [3, 4]]
     >>> print(matrix_mul(m_a, m_b))
     Traceback (most recent call last):
     ValueError: m_a can't be empty
+
+    >>> m_b = [[]]
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: m_b can't be empty
 
     >>> m_a = [[2, 3, 4]]
     >>> m_b = [[5, 6, 7]]
@@ -125,3 +166,14 @@ Error cases:
     Traceback (most recent call last):
     ValueError: m_a and m_b can't be multiplied
 
+    >>> m_a = [[-1.8976, "alx"], [3, -4.5]]
+    >>> m_b = [[1, -2.7], [-3.9, "4"]]
+    >>> print(matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    TypeError: m_a should contain only integers or floats
+
+    >>> m_a = [["string", 2], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))    
+    Traceback (most recent call last):
+    TypeError: m_a should contain only integers or floats
