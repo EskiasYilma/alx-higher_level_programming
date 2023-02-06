@@ -1,0 +1,43 @@
+The MyList Module:
+=======================
+
+Using ``MyList``
+-------------------
+
+First Import ``print_sorted`` function from ``1-my_list`` module:
+
+    >>> MyList = __import__("1-my_list").MyList
+
+Documentation Test:
+
+    >>> len(__import__("1-my_list").__doc__) > 0
+    True
+
+    >>> len(__import__("1-my_list").MyList.__doc__) > 0
+    True
+
+    >>> len(__import__("1-my_list").MyList.print_sorted.__doc__) > 0
+    True
+
+Usage for correct outputs:
+    >>> my_list = MyList()
+    >>> my_list
+    []
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list
+    [1, 4, 2]
+    >>> my_list.append(3)
+    >>> my_list.append(-5)
+    >>> print(my_list)
+    [1, 4, 2, 3, -5]
+
+    >>> my_list.print_sorted()
+    [-5, 1, 2, 3, 4]
+
+Error outputs:
+    >>> my_list.append('b')
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'str' and 'int'

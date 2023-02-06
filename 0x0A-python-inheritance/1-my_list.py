@@ -7,6 +7,7 @@ Module Docstring
 class MyList(list):
     """
     Class Docstring
+    Returns A sorted list
     """
 
     def print_sorted(self):
