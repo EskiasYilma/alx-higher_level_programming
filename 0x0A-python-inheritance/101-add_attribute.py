@@ -4,12 +4,12 @@ Module Docstring
 """
 
 
-def add_attribute(object, name, attr):
+def add_attribute(test_object, test_name, test_attr):
     """
     add_attribute Function
     """
-    test_attr = getattr(object, "__doc__", None)
+    test_attr = getattr(test_object, "__doc__", None)
     if test_attr == None:
-        setattr(object, name, attr)
+        setattr(test_object, test_name, test_attr)
     else:
         raise TypeError("can't add new attribute")
