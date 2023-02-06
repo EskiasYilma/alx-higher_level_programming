@@ -2,3 +2,10 @@
 """
 Module Docstring
 """
+
+
+class BaseGeometry:
+    """
+    Class Docstring
+    """
+    pass
