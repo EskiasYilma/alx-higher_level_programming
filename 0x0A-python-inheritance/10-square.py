@@ -15,4 +15,3 @@ class Square(Rectangle):
         init docstring
         """
         super().__init__(size, size)
-        self.__size = size
