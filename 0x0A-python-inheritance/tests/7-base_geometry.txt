@@ -25,10 +25,38 @@ Usage for correct outputs:
     >>> b.integer_validator("int", 5)
     >>> b.integer_validator("float", 500)
     >>> b.integer_validator("any_string", 1)
+    >>> b.integer_validator(5,5)
 
+Inheritence Test
+    >>> dir(b) == dir(BaseGeometry)
+    True
 
 Error outputs:
+    >>> b.integer_validator()
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    >>> b.integer_validator("int", "int")
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+
+    >>> b.integer_validator("int", None)
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+
+    >>> b.integer_validator("int", BaseGeometry)
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+
+    >>> b.integer_validator("int", "int")
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+
     >>> b.integer_validator("int", True)
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+
+    >>> b.integer_validator("int", 5.5)
     Traceback (most recent call last):
     TypeError: int must be an integer
 
@@ -44,9 +72,10 @@ Error outputs:
     Traceback (most recent call last):
     ValueError: int must be greater than 0
 
-    >>> b.integer_validator("int", {5})
+    >>> b.integer_validator("int", {5:2})
     Traceback (most recent call last):
     TypeError: int must be an integer
+
     >>> b.integer_validator("int", [5])
     Traceback (most recent call last):
     TypeError: int must be an integer
