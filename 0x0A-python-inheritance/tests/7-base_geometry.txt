@@ -30,6 +30,12 @@ Instance and functions_exists Test:
     >>> dir(b) == dir(BaseGeometry)
     True
 
+    >>> 'area' in dir(BaseGeometry)
+    True
+
+    >>> 'integer_validator' in dir(BaseGeometry)
+    True
+
 
 Error outputs:
 
