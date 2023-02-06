@@ -1,0 +1,52 @@
+The BaseGeometry Module:
+=======================
+
+Using ``BaseGeometry``
+-------------------
+
+First Import ``BaseGeometry`` function from ``7-base_geometry`` module:
+
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Documentation Test:
+
+    >>> len(__import__("7-base_geometry").__doc__) > 0
+    True
+
+    >>> len(__import__("7-base_geometry").BaseGeometry.__doc__) > 0
+    True
+
+Usage for correct outputs:
+    >>> b = BaseGeometry()
+    >>> b.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+    >>> b.integer_validator("int", 5)
+    >>> b.integer_validator("float", 500)
+    >>> b.integer_validator("any_string", 1)
+
+
+Error outputs:
+    >>> b.integer_validator("int", True)
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+
+    >>> b.integer_validator("int", 5.5)
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+
+    >>> b.integer_validator("int", 0)
+    Traceback (most recent call last):
+    ValueError: int must be greater than 0
+
+    >>> b.integer_validator("int", -2)
+    Traceback (most recent call last):
+    ValueError: int must be greater than 0
+
+    >>> b.integer_validator("int", {5})
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+    >>> b.integer_validator("int", [5])
+    Traceback (most recent call last):
+    TypeError: int must be an integer
