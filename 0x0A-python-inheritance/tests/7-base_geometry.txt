@@ -28,6 +28,10 @@ Usage for correct outputs:
 
 
 Error outputs:
+    >>> b.integer_validator()
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
     >>> b.integer_validator("int", True)
     Traceback (most recent call last):
     TypeError: int must be an integer
