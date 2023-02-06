@@ -27,7 +27,7 @@ Usage for correct outputs:
     >>> b.integer_validator("any_string", 1)
     >>> b.integer_validator(5,5)
 
-Inheritence Test
+Inheritence Test:
     >>> dir(b) == dir(BaseGeometry)
     True
 
