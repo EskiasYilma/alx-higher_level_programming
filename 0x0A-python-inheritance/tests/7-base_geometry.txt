@@ -33,7 +33,7 @@ Instance and functions_exists Test:
 
 Error outputs:
 
-    >>> bg.integer_validator(1, 2, 3)
+    >>> b.integer_validator(1, 2, 3)
     Traceback (most recent call last):
     TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
