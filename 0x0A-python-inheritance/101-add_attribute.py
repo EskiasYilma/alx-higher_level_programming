@@ -8,7 +8,8 @@ def add_attribute(object, name, attr):
     """
     add_attribute Function
     """
-    if getattr(object, "__doc__", None) is None:
+    test_attr = getattr(object, "__doc__", None)
+    if test_attr == None:
         setattr(object, name, attr)
     else:
         raise TypeError("can't add new attribute")
