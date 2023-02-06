@@ -33,6 +33,10 @@ Inheritence Test:
 
 Error outputs:
 
+    >>> b.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
     >>> b.integer_validator("int", "int")
     Traceback (most recent call last):
     TypeError: int must be an integer
