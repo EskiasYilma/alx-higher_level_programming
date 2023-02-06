@@ -33,6 +33,18 @@ Inheritence Test:
 
 Error outputs:
 
+    >>> b.integer_validator("int", "int")
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+
+    >>> b.integer_validator("int", None)
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+
+    >>> b.integer_validator("int", BaseGeometry)
+    Traceback (most recent call last):
+    TypeError: int must be an integer
+
     >>> b.integer_validator("int", True)
     Traceback (most recent call last):
     TypeError: int must be an integer
