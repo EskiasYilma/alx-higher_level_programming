@@ -37,7 +37,7 @@ Usage for correct outputs:
     [-5, 1, 2, 3, 4]
 
 Error outputs:
-    >>> my_list.append('b')
+    >>> my_list.append('x')
     >>> my_list.print_sorted()
     Traceback (most recent call last):
     TypeError: '<' not supported between instances of 'str' and 'int'
