@@ -19,6 +19,11 @@ class BaseGeometry:
             raise ValueError("{} must be greater than 0".format(name))
 
 
+"""
+Module Docstring
+"""
+
+
 class Rectangle(BaseGeometry):
     """
     Class Docstring
