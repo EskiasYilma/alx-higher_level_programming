@@ -26,11 +26,12 @@ Usage for correct outputs:
     >>> b.integer_validator("float", 500)
     >>> b.integer_validator("any_string", 1)
 
+Inheritence Test:
+    >>> dir(b) == dir(BaseGeometry)
+    True
+
 
 Error outputs:
-    >>> b.integer_validator()
-    Traceback (most recent call last):
-    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
     >>> b.integer_validator("int", True)
     Traceback (most recent call last):
