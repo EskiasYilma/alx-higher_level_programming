@@ -14,8 +14,9 @@ def add_to_list(args):
     try:
         data = load_from_json_file("add_item.json")
     except Exception:
+        data = []
         pass
-    data = []
+
     for i in args[1:]:
         data.append(i)
     save_to_json_file(data, "add_item.json")
