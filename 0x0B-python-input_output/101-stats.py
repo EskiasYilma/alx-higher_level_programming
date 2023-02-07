@@ -2,6 +2,7 @@
 """
 Module Docstring
 """
+import sys
 
 
 def tokenize(line):
@@ -29,10 +30,10 @@ def print_metrics(metrics):
     """
     print_metrics docstring
     """
-    print("File size: {}".format(metrics['ttl_size']))
+    sys.stdout.write("File size: {}\n".format(metrics['ttl_size']))
     for status_code in sorted(metrics['stat_codes'].keys()):
-        print("{}: {}".format(status_code,
-                              metrics['stat_codes'][status_code]))
+        sys.stdout.write("{}: {}\n".format(status_code,
+                                         metrics['stat_codes'][status_code]))
 
 
 def main():
@@ -42,8 +43,7 @@ def main():
     metrics = {'ttl_size': 0, 'stat_codes': {}}
     lines_read = 0
     try:
-        while True:
-            line = input()
+        for line in sys.stdin:
             status_code, file_size = tokenize(line)
             update_data(metrics, status_code, file_size)
             lines_read += 1
