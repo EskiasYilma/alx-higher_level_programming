@@ -2,6 +2,7 @@
 """
 Module Docstring
 """
+
 import sys
 
 
@@ -32,8 +33,9 @@ def print_metrics(metrics):
     """
     print("File size: {}".format(metrics['ttl_size']))
     for status_code in sorted(metrics['stat_codes'].keys()):
-        print("{}: {}".format(status_code,
-                              metrics['stat_codes'][status_code]))
+        if str(status_code) in ['200', '301', '400', '401', '403', '404', '405', '500']:
+            print("{}: {}".format(status_code,
+                                  metrics['stat_codes'][status_code]))
 
 
 def main():
