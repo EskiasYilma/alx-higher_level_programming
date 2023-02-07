@@ -33,7 +33,7 @@ def print_metrics(metrics):
     sys.stdout.write("File size: {}\n".format(metrics['ttl_size']))
     for status_code in sorted(metrics['stat_codes'].keys()):
         sys.stdout.write("{}: {}\n".format(status_code,
-                                         metrics['stat_codes'][status_code]))
+                                           metrics['stat_codes'][status_code]))
 
 
 def main():
