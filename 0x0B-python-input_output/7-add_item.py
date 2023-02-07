@@ -9,6 +9,9 @@ save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
 
 def add_to_list(args):
+    """
+    add_to_list
+    """
     if os.path.isfile("add_item.json"):
         if os.path.getsize('add_item.json') == 0:
             save_to_json_file([], "add_item.json")
