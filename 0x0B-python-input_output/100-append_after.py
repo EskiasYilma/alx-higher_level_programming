@@ -5,6 +5,9 @@ Module Docstring
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """
+    append_after
+    """
     data = ""
     with open(filename, "r") as f:
         for line in f:
