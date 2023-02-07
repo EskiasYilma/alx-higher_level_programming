@@ -35,7 +35,7 @@ if __name__ == '__main__':
                 status_codes[status] = 0
             status_codes[status] += 1
             file_size += size
-        except:
+        except Exception:
             continue
         if counter == 10:
             print("File size: {}".format(file_size))
