@@ -87,12 +87,14 @@ class TestRectangle_Init(unittest.TestCase):
             self.r1.y = -30
 
     def test_rectangle_init_no_args(self):
-        """Test the error raised when no arguments are provided to the init method"""
+        """Test the error raised when no arguments are \
+        provided to the init method"""
         with self.assertRaises(TypeError):
             r = Rectangle()
 
     def test_rectangle_init_one_arg(self):
-        """Test the error raised when only one argument is provided to the init method"""
+        """Test the error raised when only one argument is \
+        provided to the init method"""
         with self.assertRaises(TypeError):
             r = Rectangle(2)
 
@@ -119,7 +121,8 @@ class TestRectangle_Init(unittest.TestCase):
         self.assertEqual(50, self.r1.id)
 
     def test_rectangle_init_more_than_five_args(self):
-        """Test the error raised when more than five arguments are provided to the init method"""
+        """Test the error raised when more than five \
+        arguments are provided to the init method"""
         with self.assertRaises(TypeError):
             r = Rectangle(2, 3, 1, 2, 3, 4)
 
