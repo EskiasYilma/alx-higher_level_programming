@@ -11,11 +11,17 @@ from models.square import Square
 
 
 class TestRectangle_Init(unittest.TestCase):
+    """Unittests for the init method of the Rectangle class"""
+
     def setUp(self):
+        """
+        setup testing environment
+        """
         self.r1 = Rectangle(10, 20, 30, 40, 50)
 
     def test_rectangle_is_instanceof_base(self):
         """Test that the Rectangle class is derived from the Base class"""
+        self.assertIsInstance(self.r1, Rectangle)
         self.assertIsInstance(self.r1, Base)
 
     def test_rectangle_width_pinstance(self):
@@ -156,7 +162,7 @@ class TestRectangle_Init(unittest.TestCase):
 
 
 class TestRectangle_width(unittest.TestCase):
-    """Test class for the width method of the Rectangle class"""
+    """Unittests for the width method of the Rectangle class"""
 
     def test_rectangle_with_float_width(self):
         """Test for float value of width"""
@@ -220,7 +226,7 @@ class TestRectangle_width(unittest.TestCase):
 
 
 class TestRectangle_height(unittest.TestCase):
-    """Test class for the height method of the Rectangle class"""
+    """Unittests for the height method of the Rectangle class"""
 
     def test_rectangle_with_int_height(self):
         """Test height as integer"""
@@ -352,7 +358,7 @@ class TestRectangle_x(unittest.TestCase):
         self.assertEqual(r.x, 10)
 
 
-class TestRectangle_x(unittest.TestCase):
+class TestRectangle_y(unittest.TestCase):
     """Test for the y setter method of the Rectangle class"""
 
     def test_rectangle_with_int_y(self):
