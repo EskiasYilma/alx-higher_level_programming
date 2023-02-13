@@ -160,6 +160,19 @@ class TestRectangle_Init(unittest.TestCase):
         expected = {'id': 50, 'width': 10, 'height': 20, 'x': 30, 'y': 40}
         self.assertEqual(self.r1.to_dictionary(), expected)
 
+    def test_rectangle_str(self):
+        """Test the string representation of Square"""
+        r1 = Rectangle(2, 3)
+        r2 = Rectangle(20, 20, 10)
+        r3 = Rectangle(3, 2, 18)
+
+        self.assertEqual(
+            r1.__str__(), '[Rectangle] ({}) 0/0 - 2/3'.format(r1.id))
+        self.assertEqual(
+            r2.__str__(), '[Rectangle] ({}) 10/0 - 20/20'.format(r2.id))
+        self.assertEqual(
+            r3.__str__(), '[Rectangle] ({}) 18/0 - 3/2'.format(r3.id))
+
 
 class TestRectangle_width(unittest.TestCase):
     """Unittests for the width method of the Rectangle class"""

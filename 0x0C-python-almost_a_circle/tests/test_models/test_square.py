@@ -182,6 +182,15 @@ class TestSquare_Init(unittest.TestCase):
         self.assertEqual(s3.x, 20)
         self.assertEqual(s3.y, 3)
 
+    def test_display(self):
+        """Test display"""
+        self.assertIsNone(self.s1.display())
+
+    def test_to_dictionary(self):
+        """Test to_dictionary"""
+        expected = {'id': 40, 'size': 10, 'x': 20, 'y': 30}
+        self.assertEqual(self.s1.to_dictionary(), expected)
+
 
 class TestSquare_size(unittest.TestCase):
     """Unittests for the size method of the Square class"""
