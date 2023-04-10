@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 /*
-prints a square
+prints the addition of 2 integers
 */
 
 const process = require('process');
