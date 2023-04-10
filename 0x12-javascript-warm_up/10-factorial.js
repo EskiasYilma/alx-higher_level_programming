@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 /*
-prints the addition of 2 integers
+computes and prints a factorial
 */
 
 const process = require('process');
