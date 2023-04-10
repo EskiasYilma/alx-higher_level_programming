@@ -25,5 +25,5 @@ if (String(Number(process.argv[2])) === 'NaN' || process.argv.length - 2 === 1) 
       }
     }
   }
-  console.log(array[1]);
+  console.log(array.slice(-2)[0]);
 }
