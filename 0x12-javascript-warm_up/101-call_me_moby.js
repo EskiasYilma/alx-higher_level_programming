@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 /*
-returns the addition of 2 integers.
+executes x times a function.
 */
 
 module.exports.callMeMoby = function (x, theFunction) {
