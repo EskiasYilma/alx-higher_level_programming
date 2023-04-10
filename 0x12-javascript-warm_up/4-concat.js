@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 /*
-prints a message depending of the number of arguments passed
+prints two arguments passed to it, in the following format: “ is ”
 */
 
 const process = require('process');
