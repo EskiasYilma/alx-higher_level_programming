@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 /*
-executes x times a function.
+increments and calls a function.
 */
 
 module.exports.addMeMaybe = function (number, theFunction) {
