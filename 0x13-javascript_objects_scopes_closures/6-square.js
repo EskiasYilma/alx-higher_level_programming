@@ -6,9 +6,10 @@ class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
-  charPrint(c) {
+
+  charPrint (c) {
     if (c === undefined) {
-        c = 'X';
+      c = 'X';
     }
 
     let freq = '';
@@ -24,7 +25,6 @@ class Square extends Rectangle {
     }
     console.log(freq);
   }
-
 }
 
 module.exports = Square;
