@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-A script that lists all State objects that contain the letter
-a from the database hbtn_0e_6_usa
+A script that prints the State object with the name \
+passed as argument from the database hbtn_0e_6_usa
 """
 
 if __name__ == "__main__":
