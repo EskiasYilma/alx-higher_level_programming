@@ -19,13 +19,14 @@ if __name__ == "__main__":
                          db=database_name)
 
     cursor = db.cursor()
-    my_query = "SELECT * FROM states WHERE name = '{}' \
+    my_query = "SELECT id, name FROM states WHERE name = '{}' \
                 ORDER BY id ASC".format(state_name_searched)
     cursor.execute(my_query)
 
     results = cursor.fetchall()
 
     for row in results:
-        print(row)
+        if row[1] == state_name_searched:
+            print(row)
 
     db.close()
