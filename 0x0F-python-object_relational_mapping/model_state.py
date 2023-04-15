@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 class definition of a State and an instance Base = declarative_base():
     using the module SQLAlchemy
@@ -6,8 +7,8 @@ class definition of a State and an instance Base = declarative_base():
     localhost at port 3306
 """
 
-from sqlalchemy.ext.declaritive import declarative_base
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
@@ -15,7 +16,7 @@ Base = declarative_base()
 class State(Base):
     """
     State class:
-        - inherits from Base Tips
+        - inherits from Base
         - links to the MySQL table states
         - class attribute id that represents a column
         of an auto-generated, unique integer,
