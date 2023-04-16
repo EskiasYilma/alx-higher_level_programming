@@ -19,14 +19,10 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
     state_name_searched = sys.argv[4].split("'")[0]
 
-    # try:
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
                            (mysql_username,
                             mysql_password,
                             database_name), pool_pre_ping=True)
-    # except Exception:
-    #     exit(1)
-    # Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
