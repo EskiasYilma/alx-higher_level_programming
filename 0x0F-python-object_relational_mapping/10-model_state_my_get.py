@@ -26,7 +26,7 @@ if __name__ == "__main__":
                             database_name), pool_pre_ping=True)
     # except Exception:
     #     exit(1)
-    Base.metadata.create_all(engine)
+    # Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -34,7 +34,7 @@ if __name__ == "__main__":
                   State.name == (state_name_searched,))
 
     if first_state.first() is None:
-        print("Not Found")
+        print("Not found")
     else:
         print(first_state[0].id)
 
