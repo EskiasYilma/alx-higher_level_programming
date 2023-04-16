@@ -26,6 +26,7 @@ if __name__ == "__main__":
                                 database_name), pool_pre_ping=True)
     except Exception:
         exit(1)
+    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
