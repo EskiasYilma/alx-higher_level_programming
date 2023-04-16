@@ -11,6 +11,9 @@ if __name__ == "__main__":
     import sys
     from sqlalchemy.orm import sessionmaker
 
+    if len(sys.argv) != 5:
+        exit(0)
+
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
