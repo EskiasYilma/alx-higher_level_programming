@@ -9,8 +9,9 @@ if __name__ == "__main__":
     from sqlalchemy import create_engine, text
     from model_state import Base, State
     import sys
-    from sqlalchemy.orm import sessionmaker
 
+    if len(sys.argv) != 5:
+        exit(1)
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
