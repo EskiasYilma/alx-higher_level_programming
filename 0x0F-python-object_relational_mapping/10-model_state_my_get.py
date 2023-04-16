@@ -6,7 +6,7 @@ passed as argument from the database hbtn_0e_6_usa
 
 if __name__ == "__main__":
 
-    from sqlalchemy import create_engine
+    from sqlalchemy import create_engine, text
     from model_state import Base, State
     import sys
     from sqlalchemy.orm import sessionmaker
@@ -21,14 +21,12 @@ if __name__ == "__main__":
                             mysql_password,
                             database_name), pool_pre_ping=True)
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    first_state = session.query(State).filter_by(
-                  name=state_name_searched)
+    query = text("SELECT * FROM states WHERE name = :state_name")
+    result = engine.execute(query, state_name=state_name_searched)
 
-    if first_state.first() is None:
-        print("Not Found")
+    row = result.fetchone()
+    if row is not None:
+        state_id = row['id']
+        print(state_id)
     else:
-        print(first_state[0].id)
-
-    session.close()
+        print("Not Found")
