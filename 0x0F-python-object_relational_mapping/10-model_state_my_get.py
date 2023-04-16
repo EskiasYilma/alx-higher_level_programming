@@ -6,12 +6,11 @@ passed as argument from the database hbtn_0e_6_usa
 
 if __name__ == "__main__":
 
-    from sqlalchemy import create_engine, text
+    from sqlalchemy import create_engine
     from model_state import Base, State
     import sys
+    from sqlalchemy.orm import sessionmaker
 
-    # if len(sys.argv) != 5:
-    #     exit(1)
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
@@ -25,12 +24,14 @@ if __name__ == "__main__":
     except Exception:
         exit(1)
 
-    query = text("SELECT * FROM states WHERE name = :state_name")
-    result = engine.execute(query, state_name=state_name_searched)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    first_state = session.query(State).filter_by(
+                  name=state_name_searched)
 
-    row = result.fetchone()
-    if row is not None:
-        state_id = row['id']
-        print(state_id)
-    else:
+    if first_state.first() is None:
         print("Not Found")
+    else:
+        print(first_state[0].id)
+
+    session.close()
