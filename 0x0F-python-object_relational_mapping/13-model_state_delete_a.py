@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-A script that adds the State object “Louisiana” \
-to the database hbtn_0e_6_usa
+A script that deletes all State objects with a \
+name containing the letter a from the database hbtn_0e_6_usa
 """
 
 if __name__ == "__main__":
