@@ -10,8 +10,8 @@ if __name__ == "__main__":
     from model_state import Base, State
     import sys
 
-    if len(sys.argv) != 5:
-        exit(1)
+    # if len(sys.argv) != 5:
+    #     exit(1)
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
