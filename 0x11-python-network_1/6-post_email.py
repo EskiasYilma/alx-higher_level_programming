@@ -10,5 +10,5 @@ if __name__ == "__main__":
     import sys
 
     data = {'email': str(sys.argv[2])}
-    r = requests.get(str(sys.argv[1]), params=data)
+    r = requests.get(str(sys.argv[1]), data=data)
     print(r.text)
