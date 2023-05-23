@@ -6,8 +6,8 @@ req(process.argv[2], (error, response, body) => {
   if (error) {
     console.log(error);
   }
-  const results = JSON.parse(body);
-  const userdict = {};
+  let results = JSON.parse(body);
+  let userdict = {};
   for (let i = 1; i <= 10; i++) {
     let count = 0;
     for (let j = 0; j < results.length; j++) {
