@@ -21,5 +21,4 @@ const settings = {
 $.ajax(settings).done(function (response) {
   const hello = response.hello;
   $('#hello').text(hello);
-  console.log(response);
 });
